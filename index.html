@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#a391df">
+<meta name="description" content="Uma aventura de leitura interativa com Lia, Pingo e Luma. 24 páginas, cenas cinematográficas e escolhas que transformam a jornada.">
+<title>A Porta que Respirava Estrelas — E-book Interativo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Fredoka:wght@400;500;600;700&family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="ambient" aria-hidden="true"><i>✦</i><i>✧</i><i>✦</i><i>☁</i><i>✧</i></div>
+<header class="topbar">
+  <a class="brand" href="#inicio" aria-label="Voltar para o começo do livro"><span class="brand-icon">✦</span><span class="brand-name">A Porta que Respirava <em>Estrelas</em></span></a>
+  <div class="top-tools">
+    <span class="pill-text">📖 AVENTURA INTERATIVA</span>
+    <button type="button" id="btnChapters" class="tool" title="Escolher um capítulo">☰ <span>Capítulos</span></button>
+    <button type="button" id="btnSound" class="tool" aria-pressed="true" title="Ativar ou desativar efeitos sonoros">♫ <span>Som ligado</span></button>
+    <button type="button" id="btnHelp" class="tool" title="Como usar o livro">? <span>Ajuda</span></button>
+  </div>
+</header>
+<main class="layout" id="inicio">
+  <div class="eyebrow-row"><span class="mini-star">🌟</span><span id="chapterLabel">CAPÍTULO I · O CHAMADO</span><span class="line"></span><span id="pageCount">01 / 24</span></div>
+  <section class="book" aria-label="Livro interativo">
+    <section class="theater" aria-label="Ilustração animada desta página">
+      <canvas id="sceneCanvas" aria-label="Cena animada em 3D da história"></canvas>
+      <div class="theater-vignette" aria-hidden="true"></div><div class="scene-spark" aria-hidden="true">✧ ✦ ✧</div>
+      <div class="cinema-top"><span class="scene-pill"><span class="live-dot"></span><span id="sceneName">Uma noite diferente</span></span><span class="scene-kind" id="sceneKind">CENA 01</span></div>
+      <div id="effectCaption" class="effect-caption" role="status" aria-live="polite"></div>
+      <div class="theater-bottom">
+        <div class="character-strip"><div class="portrait" id="portrait">👧</div><div class="character-info"><strong id="speakerName">Lia e Pingo</strong><span id="speakerRole">Uma aventura está começando</span></div></div>
+        <button type="button" class="play-scene" id="btnPlay" title="Assistir à animação desta página"><span id="playSymbol">▶</span> <span id="playLabel">Ver a magia</span></button>
+      </div>
+      <div id="renderNotice" class="render-notice" role="status"></div>
+    </section>
+    <article class="page" aria-label="Texto do livro">
+      <div class="page-head"><span class="page-kicker" id="pageKicker">PÁGINA 01</span><div class="font-tools"><button type="button" id="btnFontMinus" aria-label="Diminuir letras" title="Diminuir tamanho do texto">A−</button><button type="button" id="btnFontPlus" aria-label="Aumentar letras" title="Aumentar tamanho do texto">A+</button></div></div>
+      <h1 id="storyTitle">Uma noite diferente</h1><div class="ornament" aria-hidden="true">✦ ❀ ✦</div>
+      <div id="storyParagraphs" class="story" aria-live="polite"></div>
+      <div class="story-quote" id="storyQuote" hidden><span id="quoteIcon">✦</span><p id="quoteText"></p></div>
+      <div class="interaction"><span class="interaction-kicker" id="interactionKicker">SUA VEZ NA HISTÓRIA</span><p id="interactionPrompt" class="interaction-prompt">O que acontece agora?</p><div id="choices" class="choices"></div><button id="btnContinue" class="continue" type="button">Continuar a história <span>→</span></button></div>
+      <div class="reader-row"><button type="button" class="read-btn" id="btnRead"><span id="readIcon">◖))</span><span id="readLabel">Ouvir esta página</span></button><span class="reading-hint">Seu livro, seu ritmo! ✨</span></div>
+    </article>
+  </section>
+  <footer class="book-footer"><button type="button" id="btnPrevious" class="nav-btn">← <span>Página anterior</span></button><div class="progress"><div class="progress-caption"><span>SEU PROGRESSO NA AVENTURA</span><strong id="progressLabel">4%</strong></div><div class="track" role="progressbar" id="progressTrack" aria-valuemin="1" aria-valuemax="24" aria-valuenow="1"><div id="progressFill"></div></div></div><button type="button" id="btnNext" class="nav-btn right"><span>Próxima página</span> →</button></footer>
+  <p class="bottom-note">🌈 Imagine, leia e escolha o seu caminho! Sua aventura fica salva neste navegador. ✨</p>
+</main>
+<div id="modal" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-card"><div class="modal-top"><h2 id="modalTitle">Capítulos</h2><button type="button" class="modal-close" id="modalClose" aria-label="Fechar janela">✕</button></div><div id="modalBody"></div></div></div>
+<div id="toast" class="toast" aria-live="polite"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/loaders/GLTFLoader.js"></script>
+<script src="story.js"></script>
+<script src="cinema.js"></script>
+<script src="illustrations.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

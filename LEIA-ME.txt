@@ -1,0 +1,51 @@
+A PORTA QUE RESPIRAVA ESTRELAS — E-BOOK INTERATIVO (EDIÇÃO ENCANTADA V2)
+===================================================================
+
+ABRIR AGORA
+  1. Abra o arquivo EBOOK_ENCANTADO.html com Chrome ou Edge.
+  2. Leia cada página do lado direito e use os botões de escolha.
+  3. Clique em "Ver a magia" para assistir ao movimento e "Pular cena" para avançar imediatamente.
+
+ALTERNATIVA: Abra index.html na pasta do projeto. Para publicação online
+(Vercel, GitHub Pages, Netlify), envie todos os arquivos da pasta, mantendo
+index.html e os 4 arquivos .js / .css lado a lado.
+
+COMO FUNCIONA
+- 24 páginas de narrativa com caminhos alternativos que se reencontram.
+- Interface responsiva, fontes grandes ajustáveis e narração via leitor nativo do navegador.
+- Progresso local salvo no computador/celular.
+- Se houver acesso à internet, o Three.js pode carregar o cenário 3D.
+- Sem Three.js, o livro usa ilustrações vetoriais 2D animadas, sem imagens quebradas.
+- Efeitos visuais por cena: porta, bolhas, floresta, barco, folha, sino, Luma,
+  flores, peixes e arco-íris.
+
+SOBRE O MODELO ORIGINAL
+O personagem do arquivo original .MAX não foi convertido para .GLB. Esse
+formato do 3ds Max não funciona diretamente no navegador.
+Para colocar o personagem original:
+  1. Exporte-o com texturas e, preferencialmente, com rig para .GLB.
+  2. Coloque na pasta modelos/lia.glb antes de publicar o site (ou importe pelo botão Ajuda).
+  3. Animações com nomes como Walk, Idle, Jump e Wave são usadas, se presentes.
+
+O personagem 3D incluso é uma RECRIAÇÃO ESTILIZADA por programação,
+inspirada nas cores da textura enviada. Não é o arquivo original convertido
+nem um modelo cinematográfico hiper-realista.
+
+DEPENDÊNCIAS:
+Bibliotecas Three.js e fontes do Google são acessadas pela internet.
+O modo 2D permanece disponível quando estiver sem conexão.
+
+ARQUIVOS:
+- index.html: página principal do site
+- styles.css: visual infantil aprimorado
+- story.js: livro de 24 páginas
+- cinema.js: motor 3D procedural e animações
+- illustrations.js: ilustrações 2D alternativas animadas
+- app.js: interface, navegação, progresso e áudio
+- EBOOK_ENCANTADO.html: arquivo único para abrir com duplo clique
+
+TESTES:
+Todos os arquivos JavaScript passaram no verificador de sintaxe (node --check)
+e as 24 páginas passaram em validação estática. O navegador automatizado deste
+ambiente bloqueou a abertura da página, portanto ainda é importante testar
+manualmente em um navegador normal para validar renderização e interação final.
